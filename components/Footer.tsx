@@ -1,18 +1,32 @@
 'use client';
 
 import Link from 'next/link';
+import MicroText from './MicroText';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
+  const text = "There are paths in the world that can't be seen — only sensed. Where others invest in the obvious, we explore what lies behind closed doors. This is a gateway to the extraordinary. Not everyone is meant to step through it.";
+
   return (
-    <footer className="bg-black text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-16 md:py-20">
+    <footer className="relative bg-black text-white border-t border-white/10 overflow-hidden">
+      {/* Animated Micro Text - Absolute Positioned */}
+      <MicroText
+        text={text}
+        className="absolute max-w-lg top-8 left-0 right-0 px-8 md:px-16 lg:px-24 pointer-events-none z-0"
+        textClassName="max-w-7xl mx-auto text-[10px] md:text-xs leading-relaxed"
+        startOpacity={0.15}
+        endOpacity={0.8}
+        startColor="#1a1a1a"
+        endColor="#888888"
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-16 md:py-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">CODESAGE</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 glitch-blue">CODESAGE</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Refreshing digital experiences with creative design for every brand.
             </p>
@@ -72,7 +86,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-gray-400 text-sm">
-                Dubai, UAE
+                Mumbai, India
               </li>
             </ul>
 

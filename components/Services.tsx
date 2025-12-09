@@ -1,6 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import MicroText from './MicroText';
+  const text = "There are paths in the world that can't be seen — only sensed. Where others invest in the obvious, we explore what lies behind closed doors. This is a gateway to the extraordinary. Not everyone is meant to step through it.";
+
 
 export default function Services() {
   const [activeSection, setActiveSection] = useState(0);
@@ -85,6 +88,16 @@ export default function Services() {
             OUR PROCESS AND EXPERTISE
           </p>
         </div>
+        {/* Animated Micro Text - Absolute Positioned */}
+              <MicroText
+                text={text}
+                className="absolute max-w-lg top-50 right-0 px-8 md:px-16 lg:px-24 pointer-events-none z-0"
+                textClassName="max-w-7xl mx-auto text-[10px] md:text-xs leading-relaxed"
+                startOpacity={0.15}
+                endOpacity={0.8}
+                startColor="#1a1a1a"
+                endColor="#888888"
+              />
 
         {/* Services Layout */}
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 flex-1">

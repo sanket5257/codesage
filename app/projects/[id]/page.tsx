@@ -23,7 +23,7 @@ const projectsData = {
   },
   'dzrpt-platform': {
     title: 'DZRPT Platform',
-    subtitle: 'Dubai, United Arab Emirates',
+    subtitle: 'Mumbai, India',
     year: '2024',
     role: 'We created a comprehensive digital platform with advanced features including real-time data processing, interactive dashboards, and seamless API integrations. Our team focused on scalability, security, and user experience to deliver a robust solution.',
     description: 'A cutting-edge platform designed for modern businesses, offering powerful analytics, automation tools, and intuitive interfaces. Built with the latest technologies to ensure performance and reliability.',

@@ -75,7 +75,7 @@ export default function About() {
           </p>
 
           <p className="text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>
-            {wrapWords('A Creative Digital Agency in Dubai', 'italic')}
+            {wrapWords('A Creative Digital Agency in India', 'italic')}
           </p>
 
           <p className="text-2xl md:text-3xl lg:text-4xl">

@@ -16,7 +16,7 @@ export default function CareersPage() {
       id: 1,
       title: 'Senior Full Stack Developer',
       department: 'Engineering',
-      location: 'Dubai, UAE',
+      location: 'Mumbai, India',
       type: 'Full-time',
       description: 'We re looking for an experienced full stack developer to join our engineering team and build amazing web applications.',
       requirements: ['5+ years experience', 'React/Next.js', 'Node.js', 'TypeScript']
@@ -34,7 +34,7 @@ export default function CareersPage() {
       id: 3,
       title: 'Frontend Developer',
       department: 'Engineering',
-      location: 'Dubai, UAE',
+      location: 'Mumbai, India',
       type: 'Full-time',
       description: 'Build responsive, performant web applications with modern frontend technologies.',
       requirements: ['3+ years experience', 'React', 'CSS/Tailwind', 'JavaScript/TypeScript']
@@ -43,7 +43,7 @@ export default function CareersPage() {
       id: 4,
       title: 'Project Manager',
       department: 'Management',
-      location: 'Dubai, UAE',
+      location: 'Mumbai, India',
       type: 'Full-time',
       description: 'Lead client projects from conception to delivery, ensuring quality and timely execution.',
       requirements: ['4+ years experience', 'Agile/Scrum', 'Client Management', 'Technical Background']
@@ -61,7 +61,7 @@ export default function CareersPage() {
       id: 6,
       title: 'DevOps Engineer',
       department: 'Engineering',
-      location: 'Dubai, UAE',
+      location: 'Mumbai, India',
       type: 'Full-time',
       description: 'Manage our infrastructure, CI/CD pipelines, and ensure smooth deployments.',
       requirements: ['3+ years experience', 'AWS/Azure', 'Docker/Kubernetes', 'CI/CD']

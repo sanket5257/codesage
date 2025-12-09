@@ -8,6 +8,7 @@ import Possibilities from '@/components/Possibilities';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 import Navbar from '@/components/Navbar';
+import Manifesto from '@/components/Manifesto';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -16,6 +17,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Services />
+            <Manifesto />
+
       <Stats />
       <Projects />
       <Possibilities />

@@ -67,7 +67,7 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:block text-right">
           <div className="text-xs text-gray-400 mb-4">
-            [DXB] {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} | عربي
+            [IND] {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' })} | हिंदी
           </div>
           <div className="space-y-2 text-sm font-medium">
             {menuItems.map((item) => (

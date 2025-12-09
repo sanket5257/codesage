@@ -175,7 +175,7 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
               <div className="text-2xl font-bold">CODESAGE</div>
             </div>
             <div className="text-sm text-gray-400">
-              [DXB] 11:37 AM | عربي
+              [IND] {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' })} | हिंदी
             </div>
           </div>
         </div>
