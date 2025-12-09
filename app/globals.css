@@ -92,6 +92,16 @@ html.lenis, html.lenis body {
   animation-play-state: paused;
 }
 
+/* Mobile Marquee Animation - Slower for better mobile performance */
+.animate-marquee-mobile {
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-mobile:hover {
+  animation-play-state: paused;
+}
+
 /* Fade In Animation */
 @keyframes fadeIn {
   from {
@@ -136,6 +146,17 @@ html.lenis, html.lenis body {
 .animate-marquee-reverse-slow {
   animation: marquee-reverse-slow 80s linear infinite;
   will-change: transform;
+}
+
+/* Mobile Marquee Animations - Slower for better performance */
+@media (max-width: 767px) {
+  .animate-marquee-slow {
+    animation: marquee-slow 100s linear infinite;
+  }
+
+  .animate-marquee-reverse-slow {
+    animation: marquee-reverse-slow 100s linear infinite;
+  }
 }
 
 /* Blue Glitch Effect */

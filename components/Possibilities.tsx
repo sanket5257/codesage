@@ -81,24 +81,24 @@ export default function Possibilities() {
     return () => ctx.revert();
   }, []);
 
-  // Rotating word animation
+  // Rotating word animation - optimized to prevent layout shift
   useEffect(() => {
     const interval = setInterval(() => {
       if (rotatingWordRef.current) {
-        // Fade out
+        // Fade out with scale for smooth transition without layout shift
         gsap.to(rotatingWordRef.current, {
           opacity: 0,
-          y: -10,
-          duration: 0.3,
-          ease: 'power2.in',
+          scale: 0.95,
+          duration: 0.4,
+          ease: 'power2.inOut',
           onComplete: () => {
             // Change word
             setCurrentWordIndex((prev) => (prev + 1) % words.length);
-            // Fade in
+            // Fade in with scale
             gsap.fromTo(
               rotatingWordRef.current,
-              { opacity: 0, y: 10 },
-              { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+              { opacity: 0, scale: 0.95 },
+              { opacity: 1, scale: 1, duration: 0.4, ease: 'power2.inOut' }
             );
           }
         });
@@ -125,14 +125,14 @@ export default function Possibilities() {
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-24">
         
         {/* Left Side - Unseen Possibilities */}
         <div ref={leftTextRef} className="flex flex-col justify-center">
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light font-[Instrument-Serif] leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
             Unseen
           </h2>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-light font-[Instrument-Serif] leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
             Possibilities.
           </h2>
         </div>
@@ -141,30 +141,31 @@ export default function Possibilities() {
         <div className="flex flex-col justify-center space-y-8">
           {/* Title */}
           <div ref={rightTitleRef}>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-light font-[Instrument-Serif] leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
               Institutional-
             </h3>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl font-light font-[Instrument-Serif] leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
               Grade Protection.
             </h3>
           </div>
 
           {/* First Description */}
-          <p ref={rightDesc1Ref} className="text-base md:text-lg font-light leading-relaxed text-gray-300">
+          <p ref={rightDesc1Ref} className="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-300">
             Private markets were designed to exclude, even those within. Opacity, risk & insider walls were once the norm.
           </p>
 
           {/* Second Description with Highlight */}
           <div ref={rightDesc2Ref} className="space-y-4">
-            <p className="text-base md:text-lg font-light leading-relaxed text-gray-300">
+            <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-300">
               We <span 
                 ref={rotatingWordRef} 
-                className="inline-block bg-gradient-to-r from-neutral-400 via-neutral-600 to-blue-800 bg-clip-text text-transparent font-medium"
+                className="inline-block relative bg-gradient-to-r from-neutral-400 via-neutral-600 to-neutral-700 bg-clip-text text-transparent font-medium text-left align-baseline"
+                style={{ minHeight: '1.5em' }}
               >
                 {words[currentWordIndex]}
               </span> the standards once taken for granted.
             </p>
-            <p className="text-sm md:text-base font-light leading-relaxed text-gray-500">
+            <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-500">
               Through blockchain verification, secure SPV structures, and the <span className="text-white">power of decentralization</span>, every deal is transparent, trusted, and built for protection.
             </p>
           </div>

@@ -171,14 +171,14 @@ export default function AccessSection() {
       </div>
 
       {/* Stats Container */}
-      <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 lg:gap-48 w-full max-w-7xl">
+      <div className="flex flex-col gap-12 lg:flex-row lg:gap-48 items-center justify-center w-full max-w-7xl">
         
         {/* 100% Stat with Dashed Circle */}
         <div className="relative flex flex-col items-center justify-center">
           <div className="relative flex items-center justify-center mb-8">
             <svg 
               ref={circle1Ref}
-              className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]" 
+              className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px]" 
               viewBox="0 0 550 550"
             >
               {/* Dashed circle */}
@@ -221,14 +221,14 @@ export default function AccessSection() {
             </svg>
             
             <div className="absolute inset-0 flex items-center justify-center">
-              <div ref={stat1Ref} className="text-8xl md:text-9xl lg:text-[180px] font-light tracking-tighter">
+              <div ref={stat1Ref} className="text-7xl md:text-8xl lg:text-9xl lg:text-[180px] font-light tracking-tighter">
                 100%
               </div>
             </div>
           </div>
           
           {/* Description text */}
-          <p ref={desc1Ref} className="text-center font-[Mynte] text-base md:text-lg max-w-md leading-relaxed font-light">
+          <p ref={desc1Ref} className="text-center font-[Mynte] text-sm md:text-base lg:text-lg max-w-md leading-relaxed font-light">
             Of our selected opportunities delivered<br />
             positive returns over the last 12 months
           </p>
@@ -239,7 +239,7 @@ export default function AccessSection() {
           <div className="relative flex items-center justify-center mb-8">
             <svg 
               ref={circle2Ref}
-              className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]" 
+              className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[550px] lg:h-[550px]" 
               viewBox="0 0 550 550"
             >
               {/* Two large overlapping circles */}
@@ -274,14 +274,14 @@ export default function AccessSection() {
             </svg>
             
             <div className="absolute inset-0 flex items-center justify-center">
-              <div ref={stat2Ref} className="text-8xl md:text-9xl lg:text-[180px] font-light tracking-tighter">
+              <div ref={stat2Ref} className="text-7xl md:text-8xl lg:text-9xl lg:text-[180px] font-light tracking-tighter">
                 +250%
               </div>
             </div>
           </div>
           
           {/* Description text */}
-          <p ref={desc2Ref} className="text-center font-[Mynte] text-base md:text-lg max-w-md leading-relaxed font-light">
+          <p ref={desc2Ref} className="text-center font-[Mynte] text-sm md:text-base lg:text-lg max-w-md leading-relaxed font-light">
             Average performance of our selection<br />
             over the last 12 months
           </p>

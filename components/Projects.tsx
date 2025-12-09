@@ -29,8 +29,8 @@ export default function Projects() {
       {/* Marquee Container */}
       <div className="relative">
         {/* Gradient Overlays - Left and Right */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-black via-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-black via-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 lg:w-48 bg-gradient-to-r from-black via-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 lg:w-48 bg-gradient-to-l from-black via-black to-transparent z-10 pointer-events-none" />
         
         <div className="space-y-4">
           {/* Row 1 - Left to Right */}
@@ -41,7 +41,7 @@ export default function Projects() {
                   <div
                     key={`row1-${setIndex}-${index}`}
                     onClick={() => handleProjectClick(project.id)}
-                    className="relative w-[220px] h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
+                    className="relative w-[180px] h-[240px] md:w-[200px] md:h-[260px] lg:w-[220px] lg:h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
                   >
                     <img
                       src={project.image}
@@ -63,7 +63,7 @@ export default function Projects() {
                   <div
                     key={`row2-${setIndex}-${index}`}
                     onClick={() => handleProjectClick(project.id)}
-                    className="relative w-[220px] h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
+                    className="relative w-[180px] h-[240px] md:w-[200px] md:h-[260px] lg:w-[220px] lg:h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
                   >
                     <img
                       src={project.image}
@@ -85,7 +85,7 @@ export default function Projects() {
                   <div
                     key={`row3-${setIndex}-${index}`}
                     onClick={() => handleProjectClick(project.id)}
-                    className="relative w-[220px] h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
+                    className="relative w-[180px] h-[240px] md:w-[200px] md:h-[260px] lg:w-[220px] lg:h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
                   >
                     <img
                       src={project.image}

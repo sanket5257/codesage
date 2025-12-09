@@ -29,7 +29,7 @@ export default function Manifesto() {
           {sections.map((section, index) => (
             <div
               key={index}
-              className="relative border-r border-white/10 last:border-r-0 px-6 md:px-8 py-8 md:py-0 min-h-[400px] flex flex-col"
+              className="relative border-b md:border-b-0 lg:border-r border-white/10 last:border-b-0 lg:last:border-r-0 px-6 md:px-8 py-8 md:py-12 min-h-[300px] md:min-h-[400px] flex flex-col"
             >
               {/* Title */}
               <h3 className="text-[10px] md:text-xs font-semibold tracking-[0.2em] text-gray-500 mb-8 uppercase">

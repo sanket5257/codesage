@@ -14,6 +14,12 @@ export default function About() {
 
     const words = containerRef.current.querySelectorAll('.word');
 
+    // Responsive ScrollTrigger configuration
+    const isMobile = window.innerWidth < 768;
+    const scrollConfig = isMobile
+      ? { start: 'top 90%', end: 'top 60%' }
+      : { start: 'top 85%', end: 'top 50%' };
+
     words.forEach((word) => {
       gsap.fromTo(
         word,
@@ -26,8 +32,8 @@ export default function About() {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: word,
-            start: 'top 85%',
-            end: 'top 50%',
+            start: scrollConfig.start,
+            end: scrollConfig.end,
             scrub: 1,
           },
         }
@@ -51,16 +57,16 @@ export default function About() {
     <section id="about" className="min-h-screen py-20 px-8 md:px-16 lg:px-24 bg-black">
       <div className="container mx-auto max-w-6xl">
 
-        {/* Status Badge */}
+        {/* Status Badge - Responsive */}
         <div className="flex justify-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-sm text-green-400">available for work now :)</span>
+            <span className="text-xs sm:text-sm text-green-400">available for work now :)</span>
           </div>
         </div>
 
-        {/* Main Text Content */}
-        <div ref={containerRef} className="space-y-10 text-3xl md:text-4xl lg:text-5xl leading-relaxed" style={{ fontFamily: 'Mynte, sans-serif' }}>
+        {/* Main Text Content - Responsive Typography */}
+        <div ref={containerRef} className="space-y-10 text-2xl md:text-4xl lg:text-5xl leading-relaxed" style={{ fontFamily: 'Mynte, sans-serif' }}>
 
           <p>
             <span className="word font-bold">CODESAGE </span>
@@ -74,15 +80,15 @@ export default function About() {
             {wrapWords('experiences that merge creativity with strategy, helping forward-thinking companies connect deeply with their audiences, accelerate their growth, and stand out in an increasingly competitive digital landscape. Our work bridges design, technology, and storytelling to deliver impactful results that leave a lasting impression.')}
           </p>
 
-          <p className="text-2xl md:text-3xl lg:text-4xl" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>
+          <p className="text-xl md:text-3xl lg:text-4xl" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>
             {wrapWords('A Creative Digital Agency in India', 'italic')}
           </p>
 
-          <p className="text-2xl md:text-3xl lg:text-4xl">
+          <p className="text-xl md:text-3xl lg:text-4xl">
             {wrapWords('We help brands grow through identity, strategy, and unique visual execution.')}
           </p>
 
-          <p className="text-xl md:text-2xl">
+          <p className="text-base md:text-xl lg:text-2xl">
             {wrapWords('Designing digital experiences that leave a lasting impression.')}
           </p>
 

@@ -18,12 +18,12 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-black">
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-black">
         <video
           autoPlay
           loop
           muted
-          
+          playsInline
           className="w-full h-full object-cover"
         >
           <source src="/09162a18-0c22dd3e.mp4" type="video/mp4" />
@@ -45,7 +45,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
           className="text-center max-w-6xl"
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight" style={{ fontFamily: 'Mynte, sans-serif' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-8 leading-tight" style={{ fontFamily: 'Mynte, sans-serif' }}>
             <span className="italic" style={{ fontFamily: 'Instrument Serif, serif', fontWeight: 'normal' }}>Refreshing</span>{' '}
             <span className="font-semibold">Digital</span>
             <br />
@@ -68,14 +68,14 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex gap-4 justify-center flex-wrap"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center w-full max-w-md sm:max-w-none mx-auto"
           >
-            <Link href="#projects" className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-medium hover:bg-white/20 transition-all border border-white/20">
+            <Link href="#projects" className="w-full sm:w-auto px-8 py-3 min-h-[44px] flex items-center justify-center bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-medium hover:bg-white/20 transition-all border border-white/20">
               Discover our works
             </Link>
             <button 
               onClick={() => setIsBookingOpen(true)}
-              className="px-8 py-3 bg-white text-black rounded-full text-sm font-bold hover:bg-gray-200 transition-all"
+              className="w-full sm:w-auto px-8 py-3 min-h-[44px] flex items-center justify-center bg-white text-black rounded-full text-sm font-bold hover:bg-gray-200 transition-all"
             >
               Book a call
             </button>
@@ -97,17 +97,17 @@ export default function Hero() {
         {/* Marquee Container */}
         <div className="relative">
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
           
           {/* Marquee Animation - Multiple sets for seamless loop */}
-          <div className="flex animate-marquee">
+          <div className="flex animate-marquee-mobile md:animate-marquee">
             {[...Array(4)].map((_, setIndex) => (
               <div key={setIndex} className="flex flex-shrink-0">
                 {clients.map((client, index) => (
                   <div
                     key={`${setIndex}-${client}-${index}`}
-                    className="flex-shrink-0 mx-8 md:mx-12 text-xl md:text-2xl font-bold tracking-wider opacity-40 hover:opacity-100 transition-opacity cursor-pointer whitespace-nowrap"
+                    className="flex-shrink-0 mx-8 md:mx-12 text-lg md:text-xl lg:text-2xl font-bold tracking-wider opacity-40 hover:opacity-100 transition-opacity cursor-pointer whitespace-nowrap"
                   >
                     {client}
                   </div>
