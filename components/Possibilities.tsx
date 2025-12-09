@@ -159,7 +159,7 @@ export default function Possibilities() {
             <p className="text-base md:text-lg font-light leading-relaxed text-gray-300">
               We <span 
                 ref={rotatingWordRef} 
-                className="inline-block bg-gradient-to-r from-neutral-400 via-neutral-400 to-blue-400 bg-clip-text text-transparent font-medium"
+                className="inline-block bg-gradient-to-r from-neutral-400 via-neutral-600 to-blue-800 bg-clip-text text-transparent font-medium"
               >
                 {words[currentWordIndex]}
               </span> the standards once taken for granted.
