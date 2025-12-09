@@ -1,8 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import BookingModal from './BookingModal';
+import Link from 'next/link';
 
 export default function Hero() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const clients = [
     'PICASSO',
     'RESHNI',
@@ -66,10 +70,13 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex gap-4 justify-center flex-wrap"
           >
-            <button className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-medium hover:bg-white/20 transition-all border border-white/20">
+            <Link href="#projects" className="px-8 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-medium hover:bg-white/20 transition-all border border-white/20">
               Discover our works
-            </button>
-            <button className="px-8 py-3 bg-white text-black rounded-full text-sm font-bold hover:bg-gray-200 transition-all">
+            </Link>
+            <button 
+              onClick={() => setIsBookingOpen(true)}
+              className="px-8 py-3 bg-white text-black rounded-full text-sm font-bold hover:bg-gray-200 transition-all"
+            >
               Book a call
             </button>
           </motion.div>
@@ -110,6 +117,9 @@ export default function Hero() {
           </div>
         </div>
       </motion.div>
+
+      {/* Booking Modal */}
+      <BookingModal isOpen={isBookingOpen} onClose={() => setIsBookingOpen(false)} />
     </section>
   );
 }
