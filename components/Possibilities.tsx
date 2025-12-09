@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,6 +12,10 @@ export default function Possibilities() {
   const rightTitleRef = useRef<HTMLDivElement>(null);
   const rightDesc1Ref = useRef<HTMLParagraphElement>(null);
   const rightDesc2Ref = useRef<HTMLDivElement>(null);
+  const rotatingWordRef = useRef<HTMLSpanElement>(null);
+  
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const words = ['reconstruct', 'redefine', 'reconfigure'];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -77,6 +81,33 @@ export default function Possibilities() {
     return () => ctx.revert();
   }, []);
 
+  // Rotating word animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (rotatingWordRef.current) {
+        // Fade out
+        gsap.to(rotatingWordRef.current, {
+          opacity: 0,
+          y: -10,
+          duration: 0.3,
+          ease: 'power2.in',
+          onComplete: () => {
+            // Change word
+            setCurrentWordIndex((prev) => (prev + 1) % words.length);
+            // Fade in
+            gsap.fromTo(
+              rotatingWordRef.current,
+              { opacity: 0, y: 10 },
+              { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' }
+            );
+          }
+        });
+      }
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   return (
     <div ref={sectionRef} className="relative min-h-screen bg-black text-white flex items-center px-8 md:px-16 lg:px-24 py-20 overflow-hidden">
       {/* Video Background */}
@@ -126,7 +157,12 @@ export default function Possibilities() {
           {/* Second Description with Highlight */}
           <div ref={rightDesc2Ref} className="space-y-4">
             <p className="text-base md:text-lg font-light leading-relaxed text-gray-300">
-              We <span className="text-gray-500">reconstruct</span> the standards once taken for granted.
+              We <span 
+                ref={rotatingWordRef} 
+                className="inline-block bg-gradient-to-r from-neutral-400 via-neutral-400 to-blue-400 bg-clip-text text-transparent font-medium"
+              >
+                {words[currentWordIndex]}
+              </span> the standards once taken for granted.
             </p>
             <p className="text-sm md:text-base font-light leading-relaxed text-gray-500">
               Through blockchain verification, secure SPV structures, and the <span className="text-white">power of decentralization</span>, every deal is transparent, trusted, and built for protection.
