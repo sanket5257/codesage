@@ -59,24 +59,12 @@ export default function AccessSection() {
       }
 
       if (circle2Ref.current) {
-        // Initial scale animation
+        // Initial fade in animation only (no rotation)
         gsap.from(circle2Ref.current, {
-          scale: 0,
-          rotation: 180,
+          opacity: 0,
+          scale: 0.9,
           duration: 1.5,
           ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 70%',
-          }
-        });
-
-        // Continuous rotation loop (opposite direction)
-        gsap.to(circle2Ref.current, {
-          rotation: -360,
-          duration: 25,
-          ease: 'none',
-          repeat: -1,
           scrollTrigger: {
             trigger: sectionRef.current,
             start: 'top 70%',
@@ -124,31 +112,12 @@ export default function AccessSection() {
         });
       }
 
-      // Overlapping circles animation
+      // Overlapping circles fade in only (no movement)
       gsap.from('.overlap-circle', {
-        scale: 0,
         opacity: 0,
         duration: 1.2,
         stagger: 0.15,
         ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 60%',
-        }
-      });
-
-      // Continuous pulsing animation for overlapping circles
-      gsap.to('.overlap-circle', {
-        scale: 1.05,
-        opacity: 0.2,
-        duration: 3,
-        ease: 'sine.inOut',
-        repeat: -1,
-        yoyo: true,
-        stagger: {
-          each: 0.3,
-          repeat: -1,
-        },
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top 60%',
@@ -273,33 +242,34 @@ export default function AccessSection() {
               className="w-[350px] h-[350px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]" 
               viewBox="0 0 550 550"
             >
-              {/* Three overlapping circles */}
+              {/* Two large overlapping circles */}
               <circle 
                 className="overlap-circle"
-                cx="230" 
+                cx="200" 
                 cy="275" 
-                r="200" 
+                r="220" 
                 fill="none" 
-                stroke="rgba(255,255,255,0.12)" 
-                strokeWidth="1"
+                stroke="rgba(255,255,255,0.3)" 
+                strokeWidth="2"
               />
               <circle 
                 className="overlap-circle"
-                cx="320" 
+                cx="350" 
                 cy="275" 
-                r="200" 
+                r="220" 
                 fill="none" 
-                stroke="rgba(255,255,255,0.12)" 
-                strokeWidth="1"
+                stroke="rgba(255,255,255,0.3)" 
+                strokeWidth="2"
               />
+              {/* Smaller center circle */}
               <circle 
                 className="overlap-circle"
                 cx="275" 
-                cy="220" 
-                r="160" 
+                cy="275" 
+                r="180" 
                 fill="none" 
-                stroke="rgba(255,255,255,0.15)" 
-                strokeWidth="1"
+                stroke="rgba(255,255,255,0.35)" 
+                strokeWidth="2"
               />
             </svg>
             

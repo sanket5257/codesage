@@ -7,10 +7,10 @@ export default function Projects() {
   
   const projects = [
     { image: './mynte.webp', id: 'roshni-technologies', title: 'Roshni Technologies' },
-    { image: './dzrpt.webp', id: 'roshni-technologies', title: 'Project 2' },
-    { image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=500&fit=crop', id: 'roshni-technologies', title: 'Project 3' },
-    { image: './mynte.webp', id: 'roshni-technologies', title: 'Project 4' },
-    { image: './dzrpt.webp', id: 'roshni-technologies', title: 'Project 5' }
+    { image: './dzrpt.webp', id: 'dzrpt-platform', title: 'DZRPT Platform' },
+    { image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=500&fit=crop', id: 'ecommerce-store', title: 'E-Commerce Store' },
+    { image: './mynte.webp', id: 'mynte-studio', title: 'Mynte Studio' },
+    { image: './dzrpt.webp', id: 'portfolio-website', title: 'Portfolio Website' }
   ];
 
   const handleProjectClick = (projectId: string) => {
