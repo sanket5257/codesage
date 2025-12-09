@@ -134,7 +134,7 @@ export default function ProjectDetail() {
             autoPlay
             loop
             muted
-            playsInline
+            // playsInline
             preload="auto"
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           >

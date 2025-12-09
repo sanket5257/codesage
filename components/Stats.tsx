@@ -149,7 +149,7 @@ export default function AccessSection() {
         autoPlay
         loop
         muted
-        playsInline
+        // playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-80"
       >
         <source src="/b56c9806-11400f44.mp4" type="video/mp4" />

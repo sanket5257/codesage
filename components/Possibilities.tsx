@@ -115,7 +115,7 @@ export default function Possibilities() {
         autoPlay
         loop
         muted
-        playsInline
+        // playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       >
         <source src="/8760caa0-582a50ce.mp4" type="video/mp4" />
