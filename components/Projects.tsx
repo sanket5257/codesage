@@ -1,13 +1,21 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 export default function Projects() {
+  const router = useRouter();
+  
   const projects = [
-    { image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop' },
-    { image: 'https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?w=400&h=500&fit=crop' },
-    { image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=500&fit=crop' },
-    { image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop' },
-    { image: 'https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?w=400&h=500&fit=crop' }
+    { image: './mynte.webp', id: 'roshni-technologies', title: 'Roshni Technologies' },
+    { image: './dzrpt.webp', id: 'roshni-technologies', title: 'Project 2' },
+    { image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=500&fit=crop', id: 'roshni-technologies', title: 'Project 3' },
+    { image: './mynte.webp', id: 'roshni-technologies', title: 'Project 4' },
+    { image: './dzrpt.webp', id: 'roshni-technologies', title: 'Project 5' }
   ];
+
+  const handleProjectClick = (projectId: string) => {
+    router.push(`/projects/${projectId}`);
+  };
 
   return (
     <section id="projects" className="py-16 md:py-24 bg-black overflow-hidden">
@@ -32,11 +40,12 @@ export default function Projects() {
                 {projects.map((project, index) => (
                   <div
                     key={`row1-${setIndex}-${index}`}
+                    onClick={() => handleProjectClick(project.id)}
                     className="relative w-[220px] h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
                   >
                     <img
                       src={project.image}
-                      alt="Project"
+                      alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
@@ -53,11 +62,12 @@ export default function Projects() {
                 {projects.map((project, index) => (
                   <div
                     key={`row2-${setIndex}-${index}`}
+                    onClick={() => handleProjectClick(project.id)}
                     className="relative w-[220px] h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
                   >
                     <img
                       src={project.image}
-                      alt="Project"
+                      alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
@@ -74,11 +84,12 @@ export default function Projects() {
                 {projects.map((project, index) => (
                   <div
                     key={`row3-${setIndex}-${index}`}
+                    onClick={() => handleProjectClick(project.id)}
                     className="relative w-[220px] h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
                   >
                     <img
                       src={project.image}
-                      alt="Project"
+                      alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
