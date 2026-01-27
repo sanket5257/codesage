@@ -10,17 +10,23 @@ import Contact from '@/components/Contact';
 import Navbar from '@/components/Navbar';
 import Manifesto from '@/components/Manifesto';
 import Footer from '@/components/Footer';
+import Lagecy from '@/components/Lagecy';
+import Projects2 from '@/components/Projects2';
 
 export default function Home() {
   return (
     <main className="relative">
       <Navbar />
       <Hero />
+      <Lagecy/>
       <Services />
             <Manifesto />
 
       <Stats />
+
       <Projects />
+      <Projects2/>
+
       <Possibilities />
       <About />
       {/* <Contact /> */}

@@ -129,10 +129,10 @@ export default function Possibilities() {
         
         {/* Left Side - Unseen Possibilities */}
         <div ref={leftTextRef} className="flex flex-col justify-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
             Unseen
           </h2>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
             Possibilities.
           </h2>
         </div>
@@ -141,10 +141,10 @@ export default function Possibilities() {
         <div className="flex flex-col justify-center space-y-8">
           {/* Title */}
           <div ref={rightTitleRef}>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
               Institutional-
             </h3>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light font-[Instrument-Serif] leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
               Grade Protection.
             </h3>
           </div>

@@ -1,158 +1,59 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    let lastScrollY = window.scrollY;
-
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Show navbar at top of page
-      if (currentScrollY < 50) {
-        setVisible(true);
-        setScrolled(false);
-      } else {
-        // Show when scrolling up, hide when scrolling down
-        if (currentScrollY < lastScrollY) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-        setScrolled(true);
-      }
-      
-      lastScrollY = currentScrollY;
+      // Trigger effect slightly earlier for a smoother feel
+      setScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Body scroll lock when mobile menu is open
-  useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen]);
-
-  const menuItems = [
-    { label: 'EXPERTISE', href: '#services' },
-    { label: 'WHY US', href: '#about' },
-    { label: 'WORK', href: '#projects' },
-    { label: 'CONTACT', href: '#contact' }
-  ];
-
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ 
-        opacity: visible ? 1 : 0, 
-        y: visible ? 0 : -100 
-      }}
-      transition={{ duration: 0.3 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? '' : 'bg-transparent'
-      }`}
-    >
-      {/* Responsive padding: mobile (p-4), tablet (p-6), desktop (p-8 lg:p-12) */}
-      <div className="flex justify-between items-start p-4 sm:p-6 md:p-8 lg:p-12">
-        {/* Logo */}
-        <motion.a
-          href="#"
-          whileHover={{ scale: 1.05 }}
-          className="text-xl md:text-2xl font-black tracking-tighter"
-        >
-          CODESAGE
-        </motion.a>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      scrolled 
+        ? 'bg-white/[0.03] backdrop-blur-xl border-b border-white/10 py-3' 
+        : 'bg-transparent py-6'
+    }`}>
+      <div className="relative max-w-[1800px] mx-auto px-6 flex items-center justify-between">
+        
+        {/* 1. LEFT SIDE (Placeholder for balance) */}
+        <div className="hidden md:block w-32" />
 
-        {/* Desktop Menu */}
-        <div className="hidden md:block text-right">
-          <div className="text-xs text-gray-400 mb-4">
-            [IND] {new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' })} | हिंदी
-          </div>
-          <div className="space-y-2 text-sm font-medium">
-            {menuItems.map((item) => (
-              <motion.div key={item.label}>
-                <a
-                  href={item.href}
-                  className="block hover:text-gray-400 transition-colors cursor-pointer"
-                >
-                  {item.label}
-                </a>
-              </motion.div>
-            ))}
-          </div>
+        {/* 2. CENTERED BRANDING */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Link href="/" className="flex items-center gap-3 group">
+            {/* Logo Icon matching the image style */}
+            <div className="relative w-4 h-4 border border-white/40 rotate-45 flex items-center justify-center group-hover:border-white transition-colors">
+              <div className="w-1 h-1 bg-white" />
+            </div>
+            <span className="text-lg md:text-xl font-normal tracking-tight text-white uppercase whitespace-nowrap">
+              Kvell Dynamics
+            </span>
+          </Link>
         </div>
 
-        {/* Mobile Menu Button - Minimum 44x44px touch target */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden text-white focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center"
-          aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            {mobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            )}
-          </svg>
-        </button>
-      </div>
+        {/* 3. RIGHT SIDE (Titan's Gate Button) */}
+        <div className="flex items-center">
+          <button className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-[2px] group">
+            {/* Gate Icon */}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white opacity-70 group-hover:opacity-100 transition-opacity">
+              <path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M3 21h18M10 21V11h4v10" />
+            </svg>
+            <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-white">
+              Kvell's Gate
+            </span>
+          </button>
+        </div>
 
-      {/* Mobile Menu with smooth slide-in animation and backdrop blur */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
-            className="md:hidden fixed inset-0 top-[72px] bg-black/95 backdrop-blur-lg"
-          >
-            <div className="px-4 py-6 space-y-1">
-              {menuItems.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center py-3 px-4 text-base font-medium hover:text-gray-400 transition-colors min-h-[44px]"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+      </div>
+    </nav>
   );
 }

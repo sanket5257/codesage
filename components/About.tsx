@@ -66,10 +66,10 @@ export default function About() {
         </div>
 
         {/* Main Text Content - Responsive Typography */}
-        <div ref={containerRef} className="space-y-10 text-2xl md:text-4xl lg:text-5xl leading-relaxed" style={{ fontFamily: 'Mynte, sans-serif' }}>
+        <div ref={containerRef} className="space-y-10 text-2xl md:text-4xl lg:text-5xl leading-relaxed">
 
           <p>
-            <span className="word font-bold">CODESAGE </span>
+            <span className="word font-bold">KEVELL DYNAMICS </span>
             {wrapWords('is a collective of passionate')}
             <span className="word" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>digital </span>
             <span className="word" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>innovators </span>

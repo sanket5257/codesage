@@ -1,105 +1,116 @@
-'use client';
+"use client";
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
-import { useRouter } from 'next/navigation';
+const sectors = [
+  { name: "Artificial Intelligence", x: "-35%", y: "10%", speed: -100 },
+  { name: "Financial Technology", x: "-25%", y: "20%", speed: 150 },
+  { name: "Space Exploration", x: "-40%", y: "30%", speed: -200 },
+  { name: "Enterprise Infrastructure", x: "-30%", y: "45%", speed: 100 },
+  { name: "Healthcare", x: "-15%", y: "60%", speed: -50 },
+  { name: "Biotech", x: "-20%", y: "70%", speed: 250 },
+  { name: "Next-Gen Defense", x: "-25%", y: "85%", speed: -120 },
+  { name: "Cybersecurity", x: "-30%", y: "95%", speed: 180 },
+];
 
-export default function Projects() {
-  const router = useRouter();
-  
-  const projects = [
-    { image: './mynte.webp', id: 'roshni-technologies', title: 'Roshni Technologies' },
-    { image: './dzrpt.webp', id: 'dzrpt-platform', title: 'DZRPT Platform' },
-    { image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=400&h=500&fit=crop', id: 'ecommerce-store', title: 'E-Commerce Store' },
-    { image: './mynte.webp', id: 'mynte-studio', title: 'Mynte Studio' },
-    { image: './dzrpt.webp', id: 'portfolio-website', title: 'Portfolio Website' }
-  ];
+const companies = [
+  "OpenAI", "PsiQuantum", "ByteDance", "THINKING MACHINES", "Perplexity", "Lambda", 
+  "Anthropic", "Palantir", "SpaceX", "Stripe", "Figma", "Linear", "Vercel", "Notion"
+];
 
-  const handleProjectClick = (projectId: string) => {
-    router.push(`/projects/${projectId}`);
-  };
+export default function HeroSection() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
   return (
-    <section id="projects" className="py-16 md:py-24 bg-black overflow-hidden">
-      {/* Header */}
-      <div className="px-8 md:px-16 lg:px-24 mb-12">
-        <p className="text-[10px] md:text-xs text-white uppercase tracking-[0.2em]">
-          SELECTED WORKS
-        </p>
+    <div ref={containerRef} className="relative h-[200vh] bg-black text-white overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video src="/8760caa0-582a50ce.mp4" autoPlay loop muted className="w-full h-full object-cover opacity-50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
       </div>
 
-      {/* Marquee Container */}
-      <div className="relative">
-        {/* Gradient Overlays - Left and Right */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-32 lg:w-48 bg-gradient-to-r from-black via-black to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-32 lg:w-48 bg-gradient-to-l from-black via-black to-transparent z-10 pointer-events-none" />
-        
-        <div className="space-y-4">
-          {/* Row 1 - Left to Right */}
-          <div className="flex animate-marquee-slow">
-            {[...Array(4)].map((_, setIndex) => (
-              <div key={setIndex} className="flex flex-shrink-0 gap-4">
-                {projects.map((project, index) => (
-                  <div
-                    key={`row1-${setIndex}-${index}`}
-                    onClick={() => handleProjectClick(project.id)}
-                    className="relative w-[180px] h-[240px] md:w-[200px] md:h-[260px] lg:w-[220px] lg:h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+      {/* Floating Text Overlay */}
+      <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center pointer-events-none z-10">
+        {sectors.map((item, index) => {
+          // Creates a unique scroll movement for each item
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const yMove = useTransform(scrollYProgress, [0, 1], [0, item.speed]);
 
-          {/* Row 2 - Right to Left */}
-          <div className="flex animate-marquee-reverse-slow">
-            {[...Array(4)].map((_, setIndex) => (
-              <div key={setIndex} className="flex flex-shrink-0 gap-4">
-                {projects.map((project, index) => (
-                  <div
-                    key={`row2-${setIndex}-${index}`}
-                    onClick={() => handleProjectClick(project.id)}
-                    className="relative w-[180px] h-[240px] md:w-[200px] md:h-[260px] lg:w-[220px] lg:h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          {/* Row 3 - Left to Right */}
-          <div className="flex animate-marquee-slow">
-            {[...Array(4)].map((_, setIndex) => (
-              <div key={setIndex} className="flex flex-shrink-0 gap-4">
-                {projects.map((project, index) => (
-                  <div
-                    key={`row3-${setIndex}-${index}`}
-                    onClick={() => handleProjectClick(project.id)}
-                    className="relative w-[180px] h-[240px] md:w-[200px] md:h-[260px] lg:w-[220px] lg:h-[280px] rounded-xl overflow-hidden flex-shrink-0 group cursor-pointer"
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/40 transition-opacity duration-300 group-hover:bg-black/20" />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+          return (
+            <motion.div
+              key={index}
+              style={{ 
+                y: yMove,
+                left: `calc(50% + ${item.x})`,
+                top: item.y
+              }}
+              className="absolute whitespace-nowrap text-5xl md:text-7xl lg:text-8xl font-light tracking-tight opacity-90 transition-opacity duration-500"
+            >
+              {/* INNER TEXT SHIMMER EFFECT */}
+              <span className="relative inline-block overflow-hidden">
+                <motion.span
+                  animate={{ 
+                    backgroundPosition: ['-200% 0%', '200% 0%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  {item.name}
+                </motion.span>
+                
+                {/* Horizontal Flare Line across the text */}
+                <motion.div 
+                  animate={{ 
+                    left: ['-100%', '200%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                  className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-50 z-[-1]"
+                />
+              </span>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+
+      {/* Bottom Marquee */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-t border-white/10 py-4 overflow-hidden">
+        <motion.div
+          animate={{ x: [0, -2000] }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+          className="flex items-center gap-12 whitespace-nowrap"
+        >
+          {[...companies, ...companies].map((company, index) => (
+            <div key={index} className="flex items-center gap-12">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-white/70 tracking-wide">
+                {company}
+              </span>
+              <div className="w-1 h-1 bg-white/30 rounded-full" />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </div>
   );
 }

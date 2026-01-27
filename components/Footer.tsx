@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 lg:gap-12 mb-16">
           {/* Brand Section */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 glitch-blue">CODESAGE</h3>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 glitch-blue">Kvelld</h3>
             <p className="text-gray-400 text-sm leading-relaxed">
               Refreshing digital experiences with creative design for every brand.
             </p>
