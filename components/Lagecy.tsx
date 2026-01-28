@@ -162,11 +162,81 @@ export default function LegacyAISection() {
             }}
             className="mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-4">
-              Kvell Dynamics,
+            <h1 className="text-5xl md:text-7xl font-light leading-tight mb-4">
+              {/* INNER TEXT SHIMMER EFFECT */}
+              <span className="relative inline-block overflow-hidden">
+                <motion.span
+                  animate={{ 
+                    backgroundPosition: ['-200% 0%', '200% 0%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  Kvell Dynamics,
+                </motion.span>
+                
+                {/* Horizontal Flare Line across the text */}
+                <motion.div 
+                  animate={{ 
+                    left: ['-100%', '200%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear" 
+                  }}
+                  className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-50 z-[-1]"
+                />
+              </span>
             </h1>
-            <h2 className="text-4xl md:text-6xl font-light text-white/90 italic leading-tight">
-              built by experts
+            <h2 className="text-4xl md:text-6xl font-light italic leading-tight">
+              {/* INNER TEXT SHIMMER EFFECT */}
+              <span className="relative inline-block overflow-hidden">
+                <motion.span
+                  animate={{ 
+                    backgroundPosition: ['-200% 0%', '200% 0%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 2.5 // Offset animation for visual variety
+                  }}
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #ffffff90 40%, #3b82f6 50%, #ffffff90 60%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  built by experts
+                </motion.span>
+                
+                {/* Horizontal Flare Line across the text */}
+                <motion.div 
+                  animate={{ 
+                    left: ['-100%', '200%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 2.5 // Offset animation for visual variety
+                  }}
+                  className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-30 z-[-1]"
+                />
+              </span>
             </h2>
           </motion.div>
 
