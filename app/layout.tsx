@@ -3,7 +3,7 @@ import "./globals.css";
 import SmoothScrolling from "@/components/SmoothScrolling";
 
 export const metadata: Metadata = {
-  title: "CodeSage - Digital Agency",
+  title: "KvellD - Digital Agency",
   description: "Modern digital agency specializing in web development and 3D experiences",
 };
 
