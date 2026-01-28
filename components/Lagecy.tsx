@@ -163,7 +163,7 @@ export default function LegacyAISection() {
             className="mb-12"
           >
             <h1 className="text-5xl md:text-7xl font-light text-white leading-tight mb-4">
-              Legacy AI solutions,
+              Kvell Dynamics,
             </h1>
             <h2 className="text-4xl md:text-6xl font-light text-white/90 italic leading-tight">
               built by experts
@@ -185,7 +185,7 @@ export default function LegacyAISection() {
             className="mb-12"
           >
             <p className="text-lg text-white/70 leading-relaxed max-w-lg">
-              LegacyAI is a premier IT consulting firm specializing in artificial 
+              KvellD is a premier IT consulting firm specializing in artificial 
               intelligence, machine learning, and enterprise automation. We transform 
               legacy systems into intelligent, future-ready platforms.
             </p>
