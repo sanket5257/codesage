@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,11 +130,45 @@ export default function Possibilities() {
         
         {/* Left Side - Unseen Possibilities */}
         <div ref={leftTextRef} className="flex flex-col justify-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
             Unseen
           </h2>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
-            Possibilities.
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
+            {/* INNER TEXT SHIMMER EFFECT */}
+            <span className="relative inline-block overflow-hidden">
+              <motion.span
+                animate={{ 
+                  backgroundPosition: ['-200% 0%', '200% 0%'],
+                }}
+                transition={{ 
+                  duration: 5, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+                style={{
+                  backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Possibilities.
+              </motion.span>
+              
+              {/* Horizontal Flare Line across the text */}
+              <motion.div 
+                animate={{ 
+                  left: ['-100%', '200%'],
+                }}
+                transition={{ 
+                  duration: 5, 
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
+                className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-50 z-[-1]"
+              />
+            </span>
           </h2>
         </div>
 
@@ -141,10 +176,46 @@ export default function Possibilities() {
         <div className="flex flex-col justify-center space-y-8">
           {/* Title */}
           <div ref={rightTitleRef}>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
-              Institutional-
+            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
+              {/* INNER TEXT SHIMMER EFFECT */}
+              <span className="relative inline-block overflow-hidden">
+                <motion.span
+                  animate={{ 
+                    backgroundPosition: ['-200% 0%', '200% 0%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 2.5 // Offset animation for visual variety
+                  }}
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  Institutional-
+                </motion.span>
+                
+                {/* Horizontal Flare Line across the text */}
+                <motion.div 
+                  animate={{ 
+                    left: ['-100%', '200%'],
+                  }}
+                  transition={{ 
+                    duration: 5, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 2.5 // Offset animation for visual variety
+                  }}
+                  className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-30 z-[-1]"
+                />
+              </span>
             </h3>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light  leading-tight">
+            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
               Grade Protection.
             </h3>
           </div>
@@ -159,10 +230,44 @@ export default function Possibilities() {
             <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-300">
               We <span 
                 ref={rotatingWordRef} 
-                className="inline-block relative bg-gradient-to-r from-neutral-400 via-neutral-600 to-neutral-700 bg-clip-text text-transparent font-medium text-left align-baseline"
+                className="inline-block relative font-medium text-left align-baseline"
                 style={{ minHeight: '1.5em' }}
               >
-                {words[currentWordIndex]}
+                {/* INNER TEXT SHIMMER EFFECT for rotating word */}
+                <motion.span
+                  animate={{ 
+                    backgroundPosition: ['-200% 0%', '200% 0%'],
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 1 // Slight delay for visual variety
+                  }}
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, #a3a3a3 40%, #3b82f6 50%, #a3a3a3 60%)',
+                    backgroundSize: '200% 100%',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  {words[currentWordIndex]}
+                </motion.span>
+                
+                {/* Horizontal Flare Line for rotating word */}
+                <motion.div 
+                  animate={{ 
+                    left: ['-100%', '200%'],
+                  }}
+                  transition={{ 
+                    duration: 3, 
+                    repeat: Infinity, 
+                    ease: "linear",
+                    delay: 1
+                  }}
+                  className="absolute top-1/2 -translate-y-1/2 w-20 h-[1px] bg-blue-400 blur-[1px] opacity-40 z-[-1]"
+                />
               </span> the standards once taken for granted.
             </p>
             <p className="text-sm md:text-base lg:text-lg font-light leading-relaxed text-gray-500">
