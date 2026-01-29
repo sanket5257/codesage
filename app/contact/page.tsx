@@ -76,7 +76,7 @@ export default function ContactPage() {
               {/* Left Side - Contact Info */}
               <div className="space-y-8">
                 <div>
-                  <span className="text-[#00C896] text-xs font-medium tracking-[0.15em] uppercase">
+                  <span className="text-[#9AE600] text-xs font-medium tracking-[0.15em] uppercase">
                     CONTACT US
                   </span>
                 </div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
                 <div className="pt-12 flex gap-16">
                   <div>
                     <span className="text-[10px] text-white/40 uppercase tracking-wider">EMAIL</span>
-                    <p className="text-sm font-medium mt-1 text-[#00C896]">INFO@NIVORA.COM</p>
+                    <p className="text-sm font-medium mt-1 text-[#9AE600]">INFO@NIVORA.COM</p>
                   </div>
                   <div>
                     <span className="text-[10px] text-white/40 uppercase tracking-wider">TEL</span>
