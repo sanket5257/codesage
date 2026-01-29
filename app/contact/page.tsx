@@ -76,7 +76,7 @@ export default function ContactPage() {
               {/* Left Side - Contact Info */}
               <div className="space-y-8">
                 <div>
-                  <span className="text-[#9AE600] text-xs font-medium tracking-[0.15em] uppercase">
+                  <span className="text-[#3b82f6] text-xs font-medium tracking-[0.15em] uppercase">
                     CONTACT US
                   </span>
                 </div>
@@ -87,7 +87,41 @@ export default function ContactPage() {
                   transition={{ duration: 0.6 }}
                   className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none"
                 >
-                  CONTACT
+                  {/* INNER TEXT SHIMMER EFFECT */}
+                  <span className="relative inline-block overflow-hidden">
+                    <motion.span
+                      animate={{
+                        backgroundPosition: ['-200% 0%', '200% 0%'],
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                      style={{
+                        backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                        backgroundSize: '200% 100%',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        backgroundClip: 'text',
+                      }}
+                    >
+                      CONTACT
+                    </motion.span>
+
+                    {/* Horizontal Flare Line across the text */}
+                    <motion.div
+                      animate={{
+                        left: ['-100%', '200%'],
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "linear"
+                      }}
+                      className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-50 z-[-1]"
+                    />
+                  </span>
                 </motion.h1>
 
                 <p className="text-white/60 text-sm leading-relaxed max-w-md">
@@ -106,7 +140,7 @@ export default function ContactPage() {
                 <div className="pt-12 flex gap-16">
                   <div>
                     <span className="text-[10px] text-white/40 uppercase tracking-wider">EMAIL</span>
-                    <p className="text-sm font-medium mt-1 text-[#9AE600]">INFO@NIVORA.COM</p>
+                    <p className="text-sm font-medium mt-1 text-[#3b82f6]">INFO@NIVORA.COM</p>
                   </div>
                   <div>
                     <span className="text-[10px] text-white/40 uppercase tracking-wider">TEL</span>

@@ -209,7 +209,7 @@ export default function Navbar() {
                         >
                           {/* Active/Hover Background */}
                           <motion.span
-                            className={`absolute -left-2 -top-1 -bottom-1 bg-[#9AE600] ${
+                            className={`absolute -left-2 -top-1 -bottom-1 bg-blue-500 ${
                               isActive ? 'opacity-100' : 'opacity-0'
                             }`}
                             initial={false}
