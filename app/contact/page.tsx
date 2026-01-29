@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
 
 const faqData = [
   { question: "WHAT SERVICES OFFERED?", answer: "We offer web design, development, branding, and digital marketing services to help you build and grow your digital presence." },
@@ -26,7 +28,7 @@ const locations = [
   "Other"
 ];
 
-export default function Contact() {
+export default function ContactPage() {
   const [currentTime, setCurrentTime] = useState('');
   const [currentDay, setCurrentDay] = useState('');
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -63,26 +65,7 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-white/10">
-        <div className="max-w-[1920px] mx-auto px-6 py-4 flex items-center justify-between">
-          {/* Hamburger Menu */}
-          <button className="flex flex-col gap-1.5 p-2 hover:opacity-70 transition-opacity">
-            <span className="w-5 h-[1.5px] bg-white"></span>
-            <span className="w-5 h-[1.5px] bg-white"></span>
-          </button>
-
-          {/* Center Brand */}
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
-            <span className="text-sm font-medium tracking-[0.2em] uppercase">NIVORA</span>
-          </Link>
-
-          {/* Date/Time */}
-          <div className="text-xs text-white/70 tracking-wide">
-            {currentDay}, {currentTime}
-          </div>
-        </div>
-      </nav>
+   <Navbar/>
 
       {/* Main Content */}
       <main className="pt-20">
@@ -283,6 +266,7 @@ export default function Contact() {
           </div>
         </section>
       </main>
+      <Footer/>
     </div>
   );
 }

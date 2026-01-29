@@ -40,17 +40,17 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* 3. RIGHT SIDE (Titan's Gate Button) */}
+        {/* 3. RIGHT SIDE (Contact Button) */}
         <div className="flex items-center">
-          <button className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-[2px] group">
+          <Link href="/contact" className="flex items-center gap-3 px-5 py-2.5 bg-white/5 border border-white/10 hover:bg-white/10 transition-all rounded-[2px] group">
             {/* Gate Icon */}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-white opacity-70 group-hover:opacity-100 transition-opacity">
               <path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16M3 21h18M10 21V11h4v10" />
             </svg>
             <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-white">
-              Kvell's Gate
+              contact
             </span>
-          </button>
+          </Link>
         </div>
 
       </div>
