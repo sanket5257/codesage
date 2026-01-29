@@ -37,7 +37,76 @@ export default function AboutHero() {
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] mb-12">
             You can't replicate a man's
             <br />
-            <span className="italic font-light">signature</span> from his <span className="italic font-light">text</span>.
+            {/* INNER TEXT SHIMMER EFFECT */}
+            <span className="relative inline-block overflow-hidden">
+              <motion.span
+                animate={{
+                  backgroundPosition: ['-200% 0%', '200% 0%'],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                style={{
+                  backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                className="italic font-light"
+              >
+                signature
+              </motion.span>
+              <motion.div
+                animate={{
+                  left: ['-100%', '200%'],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+                className="absolute top-1/2 -translate-y-1/2 w-40 h-[1px] bg-blue-400 blur-[2px] opacity-50 z-[-1]"
+              />
+            </span>{' '}
+            from his{' '}
+            <span className="relative inline-block overflow-hidden">
+              <motion.span
+                animate={{
+                  backgroundPosition: ['-200% 0%', '200% 0%'],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 2.5
+                }}
+                style={{
+                  backgroundImage: 'linear-gradient(90deg, #fff 40%, #3b82f6 50%, #fff 60%)',
+                  backgroundSize: '200% 100%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+                className="italic font-light"
+              >
+                text
+              </motion.span>
+              <motion.div
+                animate={{
+                  left: ['-100%', '200%'],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "linear",
+                  delay: 2.5
+                }}
+                className="absolute top-1/2 -translate-y-1/2 w-20 h-[1px] bg-blue-400 blur-[2px] opacity-50 z-[-1]"
+              />
+            </span>.
           </h1>
 
           <div className="w-20 h-[1px] bg-blue-400 mb-8" />
