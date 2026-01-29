@@ -49,8 +49,9 @@ export default function StickyScrollSection() {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] bg-black text-white">
-      <div className="sticky top-0 flex h-screen items-center px-4 sm:px-6 lg:px-10">
-        <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10">
+      <div className="sticky top-0 flex h-screen items-center justify-center px-4 sm:px-6 lg:px-10">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           
           {/* LEFT SIDE: Scrolling Text */}
           <div className="flex flex-col justify-center space-y-2 sm:space-y-4 order-2 lg:order-1">
@@ -165,18 +166,14 @@ export default function StickyScrollSection() {
                 
                 {/* Overlay that appears on hover */}
                 <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-8">
-                  <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    whileHover={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                  >
+                  <div className="translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-100">
                     <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tighter uppercase mb-4 text-white">
                       {content[index].cardTitle}
                     </h3>
                     <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
                       {content[index].cardText}
                     </p>
-                  </motion.div>
+                  </div>
                 </div>
                 
                 {/* Decorative corners */}
@@ -188,6 +185,7 @@ export default function StickyScrollSection() {
             </AnimatePresence>
           </div>
 
+        </div>
         </div>
       </div>
     </section>
