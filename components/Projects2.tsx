@@ -1,6 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const content = [
   {
@@ -8,18 +9,21 @@ const content = [
     subtitle: "vs Empty Promises",
     cardTitle: "TGE",
     cardText: "Smart contracts enforce execution. If a deal dies, funds return instantly.",
+    image: "/img/project1.avif",
   },
   {
     title: "The Old World",
     subtitle: "Manual & Slow",
     cardTitle: "Traditional Finance",
     cardText: "Deals vanish, buyers drop out, funds sit idle for weeks.",
+    image: "/img/project2.avif",
   },
   {
     title: "Transparency",
     subtitle: "Real-time Auditing",
     cardTitle: "On-Chain Data",
     cardText: "Every transaction is logged permanently. No more black boxes.",
+    image: "/img/project3.avif",
   },
 ];
 
@@ -147,19 +151,39 @@ export default function StickyScrollSection() {
                 animate={{ opacity: 1, scale: 1, x: 0 }}
                 exit={{ opacity: 0, scale: 0.95, x: -20 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
-                className="w-full max-w-sm lg:max-w-md rounded-xl border border-white/10 bg-zinc-900 p-6 sm:p-8 lg:p-12 shadow-2xl"
+                className="group w-full max-w-sm lg:max-w-md h-64 sm:h-80 lg:h-96 rounded-xl border border-white/10 overflow-hidden shadow-2xl cursor-pointer relative"
               >
-                <div className="mb-8 sm:mb-12 lg:mb-20">
-                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tighter uppercase">{content[index].cardTitle}</h3>
+                {/* Full Size Project Image */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={content[index].image}
+                    alt={content[index].cardTitle}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
                 </div>
-                <p className="text-sm sm:text-base lg:text-lg text-zinc-400 leading-relaxed">
-                  {content[index].cardText}
-                </p>
-                {/* Decorative corners similar to your image */}
-                <div className="absolute top-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-t border-l border-white/30" />
-                <div className="absolute top-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-t border-r border-white/30" />
-                <div className="absolute bottom-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-b border-l border-white/30" />
-                <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-b border-r border-white/30" />
+                
+                {/* Overlay that appears on hover */}
+                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6 sm:p-8">
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3, delay: 0.1 }}
+                  >
+                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tighter uppercase mb-4 text-white">
+                      {content[index].cardTitle}
+                    </h3>
+                    <p className="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed">
+                      {content[index].cardText}
+                    </p>
+                  </motion.div>
+                </div>
+                
+                {/* Decorative corners */}
+                <div className="absolute top-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-t border-l border-white/30 z-10" />
+                <div className="absolute top-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-t border-r border-white/30 z-10" />
+                <div className="absolute bottom-0 left-0 w-3 h-3 sm:w-4 sm:h-4 border-b border-l border-white/30 z-10" />
+                <div className="absolute bottom-0 right-0 w-3 h-3 sm:w-4 sm:h-4 border-b border-r border-white/30 z-10" />
               </motion.div>
             </AnimatePresence>
           </div>
