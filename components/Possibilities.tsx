@@ -110,7 +110,7 @@ export default function Possibilities() {
   }, [words.length]);
 
   return (
-    <div ref={sectionRef} className="relative min-h-screen bg-black text-white flex items-center px-8 md:px-16 lg:px-24 py-20 overflow-hidden">
+    <div ref={sectionRef} className="relative min-h-screen bg-black text-white flex items-center px-4 sm:px-6 md:px-16 lg:px-24 py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
@@ -126,14 +126,14 @@ export default function Possibilities() {
       <div className="absolute inset-0 bg-black/50 z-0" />
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-24">
-        
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 gap-6 md:gap-8 lg:grid-cols-2 lg:gap-24">
+
         {/* Left Side - Unseen Possibilities */}
         <div ref={leftTextRef} className="flex flex-col justify-center">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light leading-tight">
             Unseen
           </h2>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light leading-tight">
             {/* INNER TEXT SHIMMER EFFECT */}
             <span className="relative inline-block overflow-hidden">
               <motion.span
@@ -173,10 +173,10 @@ export default function Possibilities() {
         </div>
 
         {/* Right Side - Institutional-Grade Protection */}
-        <div className="flex flex-col justify-center space-y-8">
+        <div className="flex flex-col justify-center space-y-4 md:space-y-6 lg:space-y-8">
           {/* Title */}
           <div ref={rightTitleRef}>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light leading-tight">
               {/* INNER TEXT SHIMMER EFFECT */}
               <span className="relative inline-block overflow-hidden">
                 <motion.span
@@ -215,7 +215,7 @@ export default function Possibilities() {
                 />
               </span>
             </h3>
-            <h3 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-light leading-tight">
               Grade Protection.
             </h3>
           </div>

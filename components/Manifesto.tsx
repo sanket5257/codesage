@@ -23,8 +23,8 @@ export default function Manifesto() {
   ];
 
   return (
-    <section className="relative bg-black text-white py-24 md:py-32 overflow-hidden">
-      <div className="max-w-[1800px] mx-auto px-8 md:px-16 lg:px-24">
+    <section id='manifesto' className="relative bg-black text-white py-16 md:py-20 lg:py-24 overflow-hidden">
+      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
           {sections.map((section, index) => (
             <div

@@ -145,7 +145,7 @@ export default function LegacyAISection() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-16 md:py-20 lg:py-24">
         <div className="max-w-2xl">
           
           {/* Main Heading with Enhanced Animation */}
@@ -162,7 +162,7 @@ export default function LegacyAISection() {
             }}
             className="mb-12"
           >
-            <h1 className="text-5xl md:text-7xl font-light leading-tight mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light leading-tight mb-4">
               {/* INNER TEXT SHIMMER EFFECT */}
               <span className="relative inline-block overflow-hidden">
                 <motion.span
@@ -199,7 +199,7 @@ export default function LegacyAISection() {
                 />
               </span>
             </h1>
-            <h2 className="text-4xl md:text-6xl font-light italic leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-light italic leading-tight">
               {/* INNER TEXT SHIMMER EFFECT */}
               <span className="relative inline-block overflow-hidden">
                 <motion.span
@@ -252,9 +252,9 @@ export default function LegacyAISection() {
               stiffness: 120,
               damping: 20
             }}
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <p className="text-lg text-white/70 leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-base md:text-lg text-white/70 leading-relaxed max-w-lg">
               KvellD is a premier IT consulting firm specializing in artificial 
               intelligence, machine learning, and enterprise automation. We transform 
               legacy systems into intelligent, future-ready platforms.
@@ -273,10 +273,10 @@ export default function LegacyAISection() {
               stiffness: 150,
               damping: 25
             }}
-            className="flex flex-wrap gap-4"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4"
           >
-            <motion.button 
-              className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-sm text-white text-sm font-medium hover:bg-white/20 transition-all duration-300"
+            <motion.button
+              className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-sm text-white text-xs sm:text-sm font-medium hover:bg-white/20 transition-all duration-300"
               whileHover={{ 
                 scale: 1.05, 
                 y: -2,
@@ -287,10 +287,10 @@ export default function LegacyAISection() {
             >
               Explore Our Services
             </motion.button>
-            <motion.button 
-              className="px-6 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-sm text-white text-sm font-medium hover:bg-white/20 transition-all duration-300"
-              whileHover={{ 
-                scale: 1.05, 
+            <motion.button
+              className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-sm text-white text-xs sm:text-sm font-medium hover:bg-white/20 transition-all duration-300"
+              whileHover={{
+                scale: 1.05,
                 y: -2,
                 boxShadow: "0 10px 25px rgba(255,255,255,0.1)"
               }}

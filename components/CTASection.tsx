@@ -84,7 +84,7 @@ export default function CTASection() {
   }, [imageTrails]);
 
   return (
-    <section className="relative py-16 lg:py-24 bg-black overflow-hidden">
+    <section className="relative py-16 md:py-20 lg:py-24 bg-black overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0 pointer-events-none">
         <video

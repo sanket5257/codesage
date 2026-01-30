@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
 
       {/* MAIN CONTENT */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6">
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 sm:px-6">
         <div className="w-full max-w-7xl">
           
           <motion.div
@@ -30,11 +30,11 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
             className="flex flex-col items-center text-center"
           >
-            <span className="text-[10px] tracking-[0.4em] uppercase mb-6 text-gray-400 font-medium">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase mb-4 md:mb-6 text-gray-400 font-medium">
               A Closed Network
             </span>
             
-            <h1 className="text-6xl md:text-8xl lg:text-8xl font-normal tracking-tight leading-[0.9] mb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight leading-[0.9] mb-8 md:mb-12">
               A New Class <br />
               {/* INNER TEXT SHIMMER EFFECT */}
               <span className="relative inline-block overflow-hidden">
@@ -74,12 +74,12 @@ export default function Hero() {
             </h1>
 
             {/* SUB-NAV */}
-            <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 px-8 py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-sm mb-16">
+            <div className="flex flex-wrap justify-center gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-3 px-4 sm:px-6 md:px-8 py-2.5 md:py-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-sm mb-10 md:mb-16">
               {['Vision', 'Opportunities', 'Pioneers', 'Manifesto'].map((item) => (
-                <Link 
-                  key={item} 
+                <Link
+                  key={item}
                   href={`#${item.toLowerCase()}`}
-                  className="text-[10px] uppercase tracking-[0.2em] text-gray-300 hover:text-white transition-colors"
+                  className="text-[9px] sm:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-300 hover:text-white transition-colors"
                 >
                   {item}
                 </Link>
@@ -90,14 +90,14 @@ export default function Hero() {
       </div>
 
       {/* FOOTER CALLOUT */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="relative z-10 pb-12 text-center"
+        className="relative z-10 pb-8 md:pb-12 text-center px-4"
       >
-        <p className="text-sm md:text-lg text-gray-400 font-light">
-          <strong className="text-white font-medium">Invitation Only.</strong> Unmatched access to the <br />
+        <p className="text-xs sm:text-sm md:text-lg text-gray-400 font-light">
+          <strong className="text-white font-medium">Invitation Only.</strong> Unmatched access to the <br className="hidden sm:block" />
           world's most coveted opportunities.
         </p>
       </motion.div>

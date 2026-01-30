@@ -32,13 +32,13 @@ export default function Services() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-center min-h-screen px-6 md:px-12 lg:px-24 py-24">
+      <div className="relative z-10 flex flex-col justify-center min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 py-16 md:py-20 lg:py-24">
         {/* Crosshair positioning element */}
         <Crosshair />
         
         {/* Main Content Container */}
         <div className="max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
             
             {/* Left Column - Main Heading */}
             <motion.div
@@ -47,7 +47,7 @@ export default function Services() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="space-y-8"
             >
-              <h1 className="text-6xl md:text-8xl lg:text-8xl font-normal tracking-tight leading-[0.9]">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-normal tracking-tight leading-[0.9]">
                 Elite Private Market
                 <br />
                 <span className="block">
@@ -100,18 +100,18 @@ export default function Services() {
               transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
               className="space-y-8 lg:pl-8"
             >
-              <div className="space-y-6">
-                <p className="text-lg md:text-xl text-white font-light leading-relaxed">
+              <div className="space-y-4 md:space-y-6">
+                <p className="text-base sm:text-lg md:text-xl text-white font-light leading-relaxed">
                   One-of-a-kind access to the epitome of private market opportunities, once reserved for institutions.
                 </p>
-                
-                <p className="text-lg md:text-xl text-white font-light leading-relaxed">
+
+                <p className="text-base sm:text-lg md:text-xl text-white font-light leading-relaxed">
                   Compounding wealth, seamlessly.
                 </p>
               </div>
 
               {/* Services Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mt-8 md:mt-12">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -177,21 +177,21 @@ export default function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.4 }}
-          className="absolute bottom-8 left-6 md:left-12 lg:left-24 right-6 md:right-12 lg:right-24"
+          className="absolute bottom-4 sm:bottom-8 left-4 sm:left-6 md:left-12 lg:left-24 right-4 sm:right-6 md:right-12 lg:right-24"
         >
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 border-t border-white/20 pt-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-3 sm:gap-4 border-t border-white/20 pt-4 sm:pt-6">
             <div className="space-y-1">
-              <p className="text-[10px] font-mono tracking-[0.3em] text-gray-400 uppercase">
+              <p className="text-[8px] sm:text-[10px] font-mono tracking-[0.2em] sm:tracking-[0.3em] text-gray-400 uppercase">
                 TGE | TITANGATE EQUITY
               </p>
-              <p className="text-[10px] font-mono tracking-[0.3em] text-white uppercase">
+              <p className="text-[8px] sm:text-[10px] font-mono tracking-[0.2em] sm:tracking-[0.3em] text-white uppercase">
                 001 — ELITE PRIVATE MARKET ACCESS
               </p>
             </div>
-            
-            <div className="text-right">
-              <p className="text-[10px] font-mono uppercase tracking-[0.4em] text-gray-400">
-                Invitation Only. <span className="text-white">Unmatched access to the world's most coveted.</span>
+
+            <div className="text-left sm:text-right">
+              <p className="text-[8px] sm:text-[10px] font-mono uppercase tracking-[0.2em] sm:tracking-[0.4em] text-gray-400">
+                Invitation Only. <span className="text-white hidden sm:inline">Unmatched access to the world's most coveted.</span>
               </p>
             </div>
           </div>

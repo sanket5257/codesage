@@ -32,16 +32,16 @@ const Footer = () => {
         }}
         className="w-full h-full bg-white text-[#1a1a1a] flex items-center justify-center"
       >
-        <motion.div 
+        <motion.div
           style={{ opacity }}
-          className="max-w-7xl mx-auto px-8 md:px-16"
+          className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16"
         >
           {/* Main Content Row */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-32">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12 mb-16 md:mb-24 lg:mb-32">
             
             {/* Left Column */}
             <div className="w-full md:w-1/2">
-              <h2 className="text-6xl md:text-8xl font-medium tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium tracking-tighter">
                 {/* INNER TEXT SHIMMER EFFECT */}
                 <span className="relative inline-block overflow-hidden">
                   <motion.span
@@ -78,20 +78,20 @@ const Footer = () => {
                   />
                 </span>
               </h2>
-              <div className="mt-40 flex items-center gap-2">
+              <div className="mt-12 md:mt-24 lg:mt-40 flex items-center gap-2">
                 {/* Simple SVG Logo Placeholder */}
-                <div className="grid grid-cols-2 gap-0.5 w-6">
+                <div className="grid grid-cols-2 gap-0.5 w-5 md:w-6">
                   {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-2 h-2 border border-black rotate-45" />
+                    <div key={i} className="w-1.5 h-1.5 md:w-2 md:h-2 border border-black rotate-45" />
                   ))}
                 </div>
-                <span className="text-2xl font-semibold tracking-tight">kvelld</span>
+                <span className="text-xl md:text-2xl font-semibold tracking-tight">kvelld</span>
               </div>
             </div>
 
             {/* Right Column */}
             <div className="w-full md:w-1/2 flex flex-col items-start">
-              <h2 className="text-6xl md:text-8xl font-medium tracking-tighter text-gray-400">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-medium tracking-tighter text-gray-400">
                 {/* INNER TEXT SHIMMER EFFECT */}
                 <span className="relative inline-block overflow-hidden">
                   <motion.span
@@ -131,29 +131,29 @@ const Footer = () => {
                 </span>
               </h2>
               
-              <div className="mt-20 max-w-sm">
-                <p className="text-gray-500 text-lg leading-relaxed">
-                  kvelld will never be open to the world, and it was never meant to be. 
+              <div className="mt-8 md:mt-12 lg:mt-20 max-w-sm">
+                <p className="text-gray-500 text-sm sm:text-base md:text-lg leading-relaxed">
+                  kvelld will never be open to the world, and it was never meant to be.
                   Those inside live the results.
                 </p>
-                <p className="mt-6 text-lg font-medium">
+                <p className="mt-4 md:mt-6 text-sm sm:text-base md:text-lg font-medium">
                   Those outside will only see the shadows.
                 </p>
               </div>
 
-              <button className="mt-12 flex items-center gap-3 px-6 py-2 bg-[#eeeeee] rounded-sm text-xs font-bold tracking-[0.2em] uppercase hover:bg-gray-200 transition-colors">
-                <span className="text-base">⛩️</span>
+              <button className="mt-8 md:mt-12 flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 bg-[#eeeeee] rounded-sm text-[10px] md:text-xs font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase hover:bg-gray-200 transition-colors">
+                <span className="text-sm md:text-base">⛩️</span>
                 kvelld's gate
               </button>
             </div>
           </div>
 
           {/* Bottom Bar */}
-          <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-transparent text-[10px] uppercase tracking-[0.2em] text-gray-400 font-bold">
-            <div className="mb-4 md:mb-0">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 pt-6 md:pt-8 border-t border-gray-200 text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.15em] sm:tracking-[0.2em] text-gray-400 font-bold">
+            <div>
               © 2026 kvelld
             </div>
-            <div className="mb-4 md:mb-0">
+            <div className="hidden sm:block">
               ALL RIGHTS RESERVED
             </div>
             <div>

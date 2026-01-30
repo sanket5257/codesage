@@ -90,7 +90,7 @@ export default function AccessSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="relative min-h-[120vh] bg-black text-white flex flex-col items-center justify-start px-4 py-32 overflow-hidden">
+    <div ref={sectionRef} className="relative min-h-screen lg:min-h-[120vh] bg-black text-white flex flex-col items-center justify-start px-4 py-16 md:py-20 lg:py-24 overflow-hidden">
       {/* Video Background with higher opacity */}
       <video
         autoPlay loop muted playsInline
@@ -101,16 +101,16 @@ export default function AccessSection() {
       <div className="absolute inset-0 bg-black/30 z-[1]" />
 
       <div className="relative z-10 w-full flex flex-col items-center">
-        <div ref={textRef} className="text-center mb-32">
-          <h1 className="text-6xl md:text-8xl font-thin tracking-tighter mb-4">Access That</h1>
-          <h1 className="text-6xl md:text-8xl font-thin tracking-tighter italic opacity-90">Speaks for Itself</h1>
+        <div ref={textRef} className="text-center mb-12 md:mb-20 lg:mb-32">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-thin tracking-tighter mb-2 md:mb-4">Access That</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-thin tracking-tighter italic opacity-90">Speaks for Itself</h1>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-around w-full max-w-[1600px] gap-24 lg:gap-12">
-          
+        <div className="flex flex-col lg:flex-row items-center justify-around w-full max-w-[1600px] gap-12 md:gap-16 lg:gap-12">
+
           {/* STAT BLOCK 1 */}
           <div className="flex flex-col items-center group">
-            <div className="relative w-[350px] h-[350px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]">
+            <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]">
               <svg ref={circle1Ref} viewBox="0 0 600 600" className="w-full h-full">
                 <defs>
                   <path id="innerPath" d="M 300,300 m -220,0 a 220,220 0 1,1 440,0 a 220,220 0 1,1 -440,0" />
@@ -133,27 +133,27 @@ export default function AccessSection() {
                 </text>
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div ref={stat1Ref} className="text-8xl md:text-[140px] font-extralight tracking-tighter">0%</div>
+                <div ref={stat1Ref} className="text-5xl sm:text-6xl md:text-8xl lg:text-[120px] font-extralight tracking-tighter">0%</div>
               </div>
             </div>
-            <p ref={desc1Ref} className="text-xl md:text-2xl font-light text-white/70 mt-8 text-center max-w-md">
+            <p ref={desc1Ref} className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-white/70 mt-4 md:mt-8 text-center max-w-sm md:max-w-md px-4">
               Selected opportunities delivered positive returns this year
             </p>
           </div>
 
           {/* STAT BLOCK 2 */}
           <div className="flex flex-col items-center">
-            <div className="relative w-[350px] h-[350px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px]">
+            <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]">
               <svg ref={circle2Ref} viewBox="0 0 600 600" className="w-full h-full">
                 <circle className="overlap-circle" cx="240" cy="300" r="240" fill="none" stroke="white" strokeWidth="1.5" strokeOpacity="0.5" />
                 <circle className="overlap-circle" cx="360" cy="300" r="240" fill="none" stroke="white" strokeWidth="1.5" strokeOpacity="0.5" />
                 <circle className="overlap-circle" cx="300" cy="300" r="280" fill="none" stroke="white" strokeWidth="1" strokeOpacity="0.2" />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div ref={stat2Ref} className="text-8xl md:text-[140px] font-extralight tracking-tighter">+0%</div>
+                <div ref={stat2Ref} className="text-5xl sm:text-6xl md:text-8xl lg:text-[120px] font-extralight tracking-tighter">+0%</div>
               </div>
             </div>
-            <p ref={desc2Ref} className="text-xl md:text-2xl font-light text-white/70 mt-8 text-center max-w-md">
+            <p ref={desc2Ref} className="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-white/70 mt-4 md:mt-8 text-center max-w-sm md:max-w-md px-4">
               Average performance across our entire curated portfolio
             </p>
           </div>

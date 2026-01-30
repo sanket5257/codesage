@@ -48,7 +48,7 @@ export default function HeroSection() {
                 left: `calc(50% + ${item.x})`,
                 top: item.y
               }}
-              className="absolute whitespace-nowrap text-5xl md:text-7xl lg:text-8xl font-light tracking-tight opacity-90 transition-opacity duration-500"
+              className="absolute whitespace-nowrap text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light tracking-tight opacity-90 transition-opacity duration-500"
             >
               {/* INNER TEXT SHIMMER EFFECT */}
               <span className="relative inline-block overflow-hidden">
@@ -91,7 +91,7 @@ export default function HeroSection() {
       </div>
 
       {/* Bottom Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-t border-white/10 py-4 overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-t border-white/10 py-2 sm:py-3 md:py-4 overflow-hidden">
         <motion.div
           animate={{ x: [0, -2000] }}
           transition={{
@@ -99,11 +99,11 @@ export default function HeroSection() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="flex items-center gap-12 whitespace-nowrap"
+          className="flex items-center gap-6 sm:gap-8 md:gap-12 whitespace-nowrap"
         >
           {[...companies, ...companies].map((company, index) => (
-            <div key={index} className="flex items-center gap-12">
-              <span className="text-2xl md:text-3xl lg:text-4xl font-medium text-white/70 tracking-wide">
+            <div key={index} className="flex items-center gap-6 sm:gap-8 md:gap-12">
+              <span className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white/70 tracking-wide">
                 {company}
               </span>
               <div className="w-1 h-1 bg-white/30 rounded-full" />

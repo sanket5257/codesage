@@ -54,19 +54,19 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="min-h-screen py-20 px-8 md:px-16 lg:px-24 bg-black">
+    <section id="about" className="min-h-screen py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-12 lg:px-24 bg-black">
       <div className="container mx-auto max-w-6xl">
 
         {/* Status Badge - Responsive */}
-        <div className="flex justify-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10">
-            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-xs sm:text-sm text-green-400">available for work now :)</span>
+        <div className="flex justify-center mb-8 md:mb-12 lg:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-green-500/30 bg-green-500/10">
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-500 animate-pulse" />
+            <span className="text-[10px] sm:text-xs md:text-sm text-green-400">available for work now :)</span>
           </div>
         </div>
 
         {/* Main Text Content - Responsive Typography */}
-        <div ref={containerRef} className="space-y-10 text-2xl md:text-4xl lg:text-5xl leading-relaxed">
+        <div ref={containerRef} className="space-y-6 md:space-y-8 lg:space-y-10 text-base sm:text-lg md:text-2xl lg:text-4xl xl:text-5xl leading-relaxed">
 
           <p>
             <span className="word font-bold">KEVELL DYNAMICS </span>
@@ -80,15 +80,15 @@ export default function About() {
             {wrapWords('experiences that merge creativity with strategy, helping forward-thinking companies connect deeply with their audiences, accelerate their growth, and stand out in an increasingly competitive digital landscape. Our work bridges design, technology, and storytelling to deliver impactful results that leave a lasting impression.')}
           </p>
 
-          <p className="text-xl md:text-3xl lg:text-4xl" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>
+          <p className="text-sm sm:text-base md:text-xl lg:text-3xl xl:text-4xl" style={{ fontFamily: 'Instrument Serif, serif', fontStyle: 'italic' }}>
             {wrapWords('A Creative Digital Agency in India', 'italic')}
           </p>
 
-          <p className="text-xl md:text-3xl lg:text-4xl">
+          <p className="text-sm sm:text-base md:text-xl lg:text-3xl xl:text-4xl">
             {wrapWords('We help brands grow through identity, strategy, and unique visual execution.')}
           </p>
 
-          <p className="text-base md:text-xl lg:text-2xl">
+          <p className="text-xs sm:text-sm md:text-base lg:text-xl xl:text-2xl">
             {wrapWords('Designing digital experiences that leave a lasting impression.')}
           </p>
 
