@@ -1,16 +1,16 @@
 "use client";
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 
 const sectors = [
-  { name: "Artificial Intelligence", x: "-35%", y: "10%", speed: -100 },
-  { name: "Financial Technology", x: "-25%", y: "20%", speed: 150 },
-  { name: "Space Exploration", x: "-40%", y: "30%", speed: -200 },
-  { name: "Enterprise Infrastructure", x: "-30%", y: "45%", speed: 100 },
-  { name: "Healthcare", x: "-15%", y: "60%", speed: -50 },
-  { name: "Biotech", x: "-20%", y: "70%", speed: 250 },
-  { name: "Next-Gen Defense", x: "-25%", y: "85%", speed: -120 },
-  { name: "Cybersecurity", x: "-30%", y: "95%", speed: 180 },
+  { name: "Artificial Intelligence", y: "10%", speed: 300 },
+  { name: "Financial Technology", y: "20%", speed: 280 },
+  { name: "Space Exploration", y: "30%", speed: 350 },
+  { name: "Enterprise Infrastructure", y: "45%", speed: 220 },
+  { name: "Healthcare", y: "60%", speed: 260 },
+  { name: "Biotech", y: "70%", speed: 320 },
+  { name: "Next-Gen Defense", y: "85%", speed: 290 },
+  { name: "Cybersecurity", y: "95%", speed: 310 },
 ];
 
 const companies = [
@@ -26,7 +26,7 @@ export default function HeroSection() {
   });
 
   return (
-    <div ref={containerRef} className="relative h-[200vh] bg-black text-white overflow-hidden">
+    <div ref={containerRef} className="relative h-dvh bg-black text-white ">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video src="/8760caa0-582a50ce.mp4" autoPlay loop muted className="w-full h-full object-cover opacity-50" />
@@ -36,25 +36,30 @@ export default function HeroSection() {
       {/* Floating Text Overlay */}
       <div className="sticky top-0 h-screen w-full flex flex-col justify-center items-center pointer-events-none z-10">
         {sectors.map((item, index) => {
-          // Creates a unique scroll movement for each item
+          // Creates alternating left/right movement for each item
+          // Odd index = move right, Even index = move left
+          const direction = index % 2 === 0 ? -1 : 1;
           // eslint-disable-next-line react-hooks/rules-of-hooks
-          const yMove = useTransform(scrollYProgress, [0, 1], [0, item.speed]);
+          const xMove = useTransform(scrollYProgress, [0, 1], [0, item.speed * direction]);
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          const xMoveSmooth = useSpring(xMove, { stiffness: 100, damping: 30, mass: 0.5 });
 
           return (
             <motion.div
               key={index}
-              style={{ 
-                y: yMove,
-                left: `calc(50% + ${item.x})`,
-                top: item.y
+              style={{
+                x: xMoveSmooth,
+                left: "50%",
+                top: item.y,
+                translateX: "-50%"
               }}
               className="absolute whitespace-nowrap text-2xl sm:text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-light tracking-tight opacity-90 transition-opacity duration-500"
             >
               {/* INNER TEXT SHIMMER EFFECT */}
               <span className="relative inline-block overflow-hidden">
                 <motion.span
-                  animate={{ 
-                    backgroundPosition: ['-200% 0%', '200% 0%'],
+                  animate={{
+                    backgroundPosition: ['-100% 0%', '200% 0%'],
                   }}
                   transition={{ 
                     duration: 5, 
@@ -73,9 +78,9 @@ export default function HeroSection() {
                 </motion.span>
                 
                 {/* Horizontal Flare Line across the text */}
-                <motion.div 
-                  animate={{ 
-                    left: ['-100%', '200%'],
+                <motion.div
+                  animate={{
+                    left: ['-50%', '200%'],
                   }}
                   transition={{ 
                     duration: 5, 
@@ -90,27 +95,7 @@ export default function HeroSection() {
         })}
       </div>
 
-      {/* Bottom Marquee */}
-      <div className="absolute bottom-0 left-0 right-0 z-20 bg-black/80 backdrop-blur-sm border-t border-white/10 py-2 sm:py-3 md:py-4 overflow-hidden">
-        <motion.div
-          animate={{ x: [0, -2000] }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="flex items-center gap-6 sm:gap-8 md:gap-12 whitespace-nowrap"
-        >
-          {[...companies, ...companies].map((company, index) => (
-            <div key={index} className="flex items-center gap-6 sm:gap-8 md:gap-12">
-              <span className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-medium text-white/70 tracking-wide">
-                {company}
-              </span>
-              <div className="w-1 h-1 bg-white/30 rounded-full" />
-            </div>
-          ))}
-        </motion.div>
-      </div>
+   
     </div>
   );
 }
