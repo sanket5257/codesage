@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
+import CTASection from './CTASection';
 
 const Footer = () => {
   const footerRef = useRef<HTMLElement>(null);
@@ -18,7 +19,9 @@ const Footer = () => {
   const opacity = useTransform(scrollYProgress, [0.2, 0.8], [0, 1]);
 
   return (
-    <footer 
+    <>
+      <CTASection />
+      <footer 
       ref={footerRef}
       className="relative w-full h-screen flex items-center justify-center bg-transparent overflow-hidden"
     >
@@ -160,6 +163,7 @@ const Footer = () => {
         </motion.div>
       </motion.div>
     </footer>
+    </>
   );
 };
 
