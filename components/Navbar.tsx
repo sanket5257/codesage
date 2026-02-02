@@ -185,8 +185,8 @@ export default function Navbar() {
             {/* Menu Content */}
             <div className="h-full flex flex-col justify-between px-8 md:px-16 py-20">
               {/* Main Navigation Links */}
-              <nav className="flex-1 flex flex-col justify-center">
-                <ul className="space-y-2 md:space-y-4">
+              <nav className="flex-1 flex flex-col justify-start pt-8">
+                <ul className="space-y-1 md:space-y-2">
                   {menuItems.map((item, i) => {
                     const isActive = pathname === item.href;
                     const isHovered = hoveredItem === item.name;
@@ -209,8 +209,8 @@ export default function Navbar() {
                         >
                           {/* Active/Hover Background */}
                           <motion.span
-                            className={`absolute -left-2 -top-1 -bottom-1 bg-blue-500 ${
-                              isActive ? 'opacity-100' : 'opacity-0'
+                            className={`absolute -left-2 -top-1 -bottom-1 ${
+                              isActive ? 'bg-blue-500' : 'bg-white'
                             }`}
                             initial={false}
                             animate={{
@@ -222,7 +222,7 @@ export default function Navbar() {
 
                           {/* Menu Item Text */}
                           <span
-                            className={`relative text-4xl md:text-6xl lg:text-7xl font-bold uppercase tracking-tight transition-colors duration-300 ${
+                            className={`relative text-2xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tight transition-colors duration-300 ${
                               isActive || isHovered ? 'text-black' : 'text-white'
                             }`}
                           >
